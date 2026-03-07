@@ -3,6 +3,7 @@
 - 日期：2026-03-07
 - 测试对象：喜庆版 Hello World（本地静态页）
 - 地址：`http://localhost:5173`
+- Atlas 执行状态：已尝试启动 `/Applications/ChatGPT Atlas.app`，但当前子代理无法直接驱动 Atlas 内置 Agent 对话流；因此本报告为手工基线验证，Atlas 证据待人工补录。
 
 ## 用例与结果
 1. 首屏展示 Hello World（PASS）
