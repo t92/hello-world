@@ -1,0 +1,138 @@
+:root {
+  --red-900: #7a001f;
+  --red-700: #b3002d;
+  --gold-500: #f8c445;
+  --gold-300: #ffe08a;
+  --text: #fff7ea;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 20%, #d81b3f 0%, transparent 35%),
+    radial-gradient(circle at 80% 10%, #ffda77 0%, transparent 30%),
+    linear-gradient(135deg, var(--red-900), var(--red-700));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.card {
+  width: min(90vw, 540px);
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(255, 224, 138, 0.45);
+  border-radius: 20px;
+  background: rgba(90, 0, 25, 0.55);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  animation: fadeInUp 800ms ease;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+}
+
+.tag {
+  margin: 0 0 0.75rem;
+  color: var(--gold-300);
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  letter-spacing: 0.04em;
+}
+
+.blessing {
+  margin: 1rem auto 1.4rem;
+  min-height: 3.2em;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.72rem 1.2rem;
+  background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
+  color: #4b1b00;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.lantern {
+  position: fixed;
+  top: 8vh;
+  width: 44px;
+  height: 64px;
+  border-radius: 22px;
+  background: linear-gradient(#f94144, #b3002d);
+  border: 2px solid var(--gold-500);
+  animation: sway 3.2s ease-in-out infinite;
+}
+
+.lantern::before,
+.lantern::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.lantern::before {
+  width: 2px;
+  height: 34px;
+  top: -34px;
+  background: var(--gold-300);
+}
+
+.lantern::after {
+  width: 10px;
+  height: 12px;
+  bottom: -12px;
+  background: var(--gold-300);
+  border-radius: 0 0 8px 8px;
+}
+
+.lantern-left { left: 7vw; }
+.lantern-right { right: 7vw; animation-delay: -1.6s; }
+
+.fireworks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgba(255, 224, 138, 0.95) 0 2px, transparent 3px) 20% 24% / 110px 110px,
+    radial-gradient(circle, rgba(255, 180, 60, 0.85) 0 2px, transparent 3px) 72% 30% / 140px 140px,
+    radial-gradient(circle, rgba(255, 240, 190, 0.9) 0 2px, transparent 3px) 50% 12% / 160px 160px;
+  opacity: 0.45;
+  animation: twinkle 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(2deg) translateY(0); }
+  50% { transform: rotate(-2deg) translateY(6px); }
+}
+
+@keyframes twinkle {
+  from { opacity: 0.25; }
+  to { opacity: 0.6; }
+}
+
+@media (max-width: 480px) {
+  .card { padding: 1.4rem 1rem; }
+  .lantern { width: 34px; height: 52px; }
+}
