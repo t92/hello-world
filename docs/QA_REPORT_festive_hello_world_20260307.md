@@ -11,11 +11,14 @@
 4. 375x812 / 1440x900 无明显破版（PASS）
 5. 键盘可聚焦按钮，`aria-live` 播报文本变化（PASS）
 
-## 缺陷分级
+## 缺陷分级（第一轮）
 - P0: 0
 - P1: 0
 - P2: 1（建议）
   - 建议增加“减少动态效果”开关以兼容 `prefers-reduced-motion`
 
-## 回流建议（一次）
-- Frontend 增加 `prefers-reduced-motion` 兼容后可放行。
+## 回流修复（一次）
+- Frontend 已补充 `@media (prefers-reduced-motion: reduce)`，关闭主要动画。
+
+## 复测结论（回流后）
+- 上述建议项已关闭，允许放行到 Ops。
