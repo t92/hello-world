@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>喜庆版 Hello World</title>
+    <meta name="description" content="喜庆版 Hello World：红金配色、灯笼烟花与新春祝福。" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero" aria-labelledby="main-title">
+      <div class="decor decor-left" aria-hidden="true">🏮</div>
+      <div class="decor decor-right" aria-hidden="true">🏮</div>
+      <p class="badge">新春限定</p>
+      <h1 id="main-title">Hello World</h1>
+      <p class="subtitle">新春大吉，万事胜意！愿你所愿，皆成所愿。</p>
+      <button id="blessingBtn" class="btn" type="button" aria-describedby="btnHint">点亮祝福</button>
+      <p id="btnHint" class="hint">可使用 Enter / Space 触发</p>
+    </header>
+
+    <main>
+      <section class="wish-card" aria-live="polite" aria-atomic="true" id="wishCard" hidden>
+        <h2>🎉 祝福已送达</h2>
+        <p id="wishText">蛇年行大运，阖家幸福，心想事成！</p>
+      </section>
+      <canvas id="fireworks" aria-hidden="true"></canvas>
+    </main>
+
+    <footer>
+      <small>Made with festive joy · Accessible by design</small>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
