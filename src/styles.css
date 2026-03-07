@@ -1,0 +1,113 @@
+:root {
+  --red-900: #7a0012;
+  --red-700: #a30d1b;
+  --gold-500: #f4c542;
+  --gold-300: #ffd972;
+  --text: #fff8ec;
+  --panel: rgba(20, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 50% 20%, #cb1e2d 0%, var(--red-700) 35%, var(--red-900) 100%);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.hero {
+  width: min(760px, 100%);
+  text-align: center;
+  background: var(--panel);
+  border: 1px solid rgba(255, 217, 114, 0.45);
+  border-radius: 24px;
+  padding: 28px 20px;
+  position: relative;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #f3b72c, #ffe19a);
+  color: #5a1f00;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+h1 {
+  margin: 16px 0 10px;
+  font-size: clamp(2rem, 7vw, 4rem);
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 32ch;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.btn {
+  margin-top: 18px;
+  border: 2px solid #ffdc8b;
+  color: #4e1e00;
+  background: linear-gradient(180deg, var(--gold-300), var(--gold-500));
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 12px 18px;
+  cursor: pointer;
+}
+
+.btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.hint { font-size: 0.9rem; opacity: 0.8; }
+
+.decor {
+  position: absolute;
+  top: 14px;
+  font-size: 2rem;
+  animation: sway 2.4s ease-in-out infinite;
+}
+.decor-left { left: 14px; }
+.decor-right { right: 14px; animation-delay: 0.6s; }
+
+.wish-card {
+  margin-top: 16px;
+  width: min(760px, 100%);
+  text-align: center;
+  background: rgba(0,0,0,0.24);
+  border: 1px dashed rgba(255, 217, 114, 0.55);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+#fireworks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+footer {
+  margin-top: 14px;
+  opacity: 0.85;
+  text-align: center;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-8deg) translateY(0); }
+  50% { transform: rotate(8deg) translateY(3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .decor { animation: none; }
+}
